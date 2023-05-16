@@ -4,6 +4,6 @@ from django.shortcuts import redirect, render
 
 def homePage(request):
     musics = list(Music.objects.all().values())
-    return render(request, 'base.html', {
+    return render(request, 'home.html', {
         'musics': musics
     })
