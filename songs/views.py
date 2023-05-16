@@ -1,7 +1,9 @@
-from django.views.generic import TemplateView
-from django.shortcuts import render
-from .models import Music
+from songs.models import Music
+from django.shortcuts import redirect, render
 
-class Index(TemplateView):
-    music = Music.objects.all()
-    template_name = 'home/index.html'
+
+def homePage(request):
+    musics = list(Music.objects.all().values())
+    return render(request, 'base.html', {
+        'musics': musics
+    })

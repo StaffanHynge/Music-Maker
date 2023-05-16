@@ -12,6 +12,7 @@ class Music(models.Model):
     time_length = models.DecimalField(
         max_digits=10, decimal_places=2, default=0.0)
     cover_image = models.ImageField(upload_to='music_images/')
+   # image_alt = models.CharField(max_length=100, null=False, blank=False)
 
     def save(self, *args, **kwargs):
         return super().save(*args, **kwargs)
