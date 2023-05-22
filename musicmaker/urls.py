@@ -1,8 +1,7 @@
-"""
-URL configuration for musicmaker project.
+"""musicmaker URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import include, path
 from django.contrib import admin
-
+from django.contrib.auth.views import LoginView, LogoutView
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('songs.urls')),
+    path('summernote/', include('django_summernote.urls')),
+    path('', include('songs.urls'), name='songs_urls'),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/login/', LoginView.as_view(), name='account_login'),
+    path('accounts/logout/', LogoutView.as_view(), name='account_logout'),
 ]
-

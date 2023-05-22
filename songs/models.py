@@ -1,24 +1,36 @@
 from django.db import models
 from django.contrib.auth.models import User
-from songs.helpers import get_audio_length
-from songs.validators import validate_is_audio
 
+
+STATUS = ((0, "Draft"), (1, "Published"))
 
 class Music(models.Model):
     user = models.ForeignKey(
         User, related_name='song_owner', on_delete=models.CASCADE)
     title = models.CharField(max_length=500, null=False, blank=False)
     artist = models.CharField(max_length=500, null=False, blank=False)
-    audio_file = models.FileField(
-        upload_to='songs/', default='', validators=[validate_is_audio])
-    time_length = models.DecimalField(
-        max_digits=10, decimal_places=2, default=0.0)
-    cover_image = models.ImageField(upload_to='music_images/')
-   # image_alt = models.CharField(max_length=100, null=False, blank=False)
+    link = models.CharField(max_length=500, null=False, blank=False)
+    status = models.IntegerField(choices=STATUS, default=0)
+    background = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
 
-    def save(self, *args, **kwargs):
-        if not self.time.length:
+    class Meta:
+        ordering = ["-created_on"]
 
-            audio_length = get_audio_length(self.audio_file)
-            self.time_length = audio_length
-        return super().save(*args, **kwargs)
+    def __str__(self):
+        return self.title
+
+class Comment(models.Model):
+    post = models.ForeignKey(Music, on_delete=models.CASCADE,
+                             related_name="comments")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"

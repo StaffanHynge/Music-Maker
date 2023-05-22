@@ -1,9 +1,9 @@
 from songs.models import Music
+from django.views import generic
 from django.shortcuts import redirect, render
 
-
-def homePage(request):
-    musics = list(Music.objects.all().values())
-    return render(request, 'home.html', {
-        'musics': musics
-    })
+class MusicList(generic.ListView):
+    model = Music
+    queryset = Music.objects.filter(status=1).order_by('-created_on')
+    template_name = 'home.html'
+    paginate_by = 6

@@ -1,14 +1,6 @@
-
-from songs.views import  homePage
+from . import views
 from django.urls import path
 
-app_name = 'songs'
-
 urlpatterns = [
-    path('', homePage, name='home_page'),
-
+    path("", views.MusicList.as_view(), name="home"),
 ]
-
-
-
-
