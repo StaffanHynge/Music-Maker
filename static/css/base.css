@@ -40,13 +40,13 @@ h6 {
 
 main {
     flex: 1 0 auto;
-    background-color: var(--white);
+    background-color: var(--off-white);
 }
 
 /* Footer */
 footer {
     flex-shrink: 0;
-    background-color: var(--off-white);
+    background-color: var(--white);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -60,8 +60,8 @@ footer {
 }
 
 /* Header */
-.navbar {
-    background-color: var(--off-white);
+.snavbar {
+    background-color: var(--white);
     box-shadow: var(--smal-box-shadow);
 }
 
@@ -69,8 +69,8 @@ a.nav-link {
     color: var(--black);
 }
 
-img.logo {
-    width: 18.75rem;
+.logo {
+    width: 10.75rem;
 }
 
 .active {

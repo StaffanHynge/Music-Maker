@@ -22,6 +22,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('songs.urls'), name='songs_urls'),
     path('accounts/', include('allauth.urls')),
+    path('djrichtextfield/', include('djrichtextfield.urls')),
     path('accounts/login/', LoginView.as_view(), name='account_login'),
     path('accounts/logout/', LogoutView.as_view(), name='account_logout'),
 ]
