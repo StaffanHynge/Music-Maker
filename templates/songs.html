@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+
+{% block title %}Songs{% endblock %}
+
+{% block content %} 
+<h1 class="text-center p-2 d-block">
+    Latest Songs
+</h1>
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+    {% for music in music_list %} 
+  <a href="{% url 'song_detail' music.pk %}" class="songs" aria-label="Click to view {{music.title}}">
+
+
+        <div class="card m-3" style="width: 18rem;">
+            <img src="{{music.image.url}}" class="card-img-top" alt="#">
+            <div class="card-body">
+                
+            <h2 class="card-title">{{music.artist}}</h2>
+            <h3 class="card-title">{{music.title}}</h3>
+              
+            <!-- <p class="card-text">{{music.background|truncatechars:100}}</p> -->
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

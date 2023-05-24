@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Song Detail - {{ song.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="song-info mt-3 p-1">
+            <div class="song-img">
+            
+                <img src="{{ song.image.url }}" alt="#" class="song-pic">
+            </div>
+            
+            <div class="song-detail">
+                <h1 class="text-center">{{ song.title }}</h1>
+                <p class="text-center">Posted by {{song.user}} on {{ song.created_on }}</p>
+                <hr>
+                <p>{{song.background}}</p>
+                <a href="{{ song.link }}" target=_blank class="p-3"><strong>Listen To {{ song.title }}: </strong></a>
+
+                {% if request.user == song.user %} 
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary w-25">Edit</a>
+                    <a href="#" class="btn btn-primary w-25">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="song-container">
+            
+    </div>
+
+{% endblock %}

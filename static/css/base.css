@@ -133,3 +133,53 @@ a.nav-link {
     background: black;
     cursor: pointer;
 }
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.song-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredients, .instructions, .song-detail {
+    width: 100%;
+}
+
+.song-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-pic {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 62.5em) {
+    .main-title {
+        width: 50%;
+        }
+    .song-container {
+        flex-direction: row;
+    }
+
+    .song-info {
+        flex-direction: row;
+        border: 1px solid var(--black);
+        }
+
+    .song-img {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .song-detail {
+        width: 60%;
+        padding: 2rem;
+    }
+}

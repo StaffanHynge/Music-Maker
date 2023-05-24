@@ -19,7 +19,7 @@
                             href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Songs</a>
+                        <a class="nav-link {% if url_name == 'songs' %}active{% endif %}"  href="{% url 'songs' %}">Songs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'add_song' %}active{% endif %}" href="{% url 'add_song' %}">Add song</a>

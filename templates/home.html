@@ -1,47 +1,34 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block title%}Home{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block extra_css %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
-        integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{% static '/css/base.css' %}">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+{% block content %}
+<div class="container d-flex justify-content-center my-4 mb-5">
+
+  <div id="mobile-box">
+
+    <!-- Card -->
+    <div class="card">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img class="card-img-top" src="https://mdbootstrap.com/wp-content/uploads/2019/02/flam.jpg"
+          alt="Card image cap">
+
+      </div>
+      <div class="card-body text-center">
+
+      <h5 class="h5 font-weight-bold"></h5>
+        <h6 class="font-weight-bold"><a href="" target="_blank">Listen to here</a></h6>
+        <p></p>
+    
+
         
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Card -->
+  </div>
+</div>
     {% endblock %}
-
-    {% block onload_js %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
-        integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {% endblock %}
-    <title>Music Maker {% block title %}{% endblock %}</title>
-</head>
-
-<body>
-    {% include 'includes/header.html' %}
-
-    <main>
-
-        {% block content %}
-        {% include 'includes/player.html' %}
-
-        {% endblock %}
-    </main>
-
-    {% include 'includes/footer.html' %}
-
-    {% block extra_js %}
-
-    {% endblock %}
-</body>
-
-</html>
