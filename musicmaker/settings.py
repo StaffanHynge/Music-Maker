@@ -16,9 +16,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-staffanhynge-music-maker-4pcklxf3ks.us2.codeanyapp.com']
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+ALLOWED_HOSTS = ['8000-staffanhynge-music-maker-4pcklxf3ks.us2.codeanyapp.com', 'music-maker.herokuapp.com']
 
 
 # Application definition
@@ -29,16 +31,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
     'crispy_forms',
     'songs',
-    'cloudinary',
-    'cloudinary_storage',
     'djrichtextfield',
 ]
 
