@@ -4,12 +4,25 @@ from django.views.generic import CreateView, TemplateView, ListView, DetailView,
 from django.shortcuts import redirect, render
 from .forms import MusicForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.db.models import Q
 
 class MusicList(ListView):
     model = Music
     template_name = 'songs.html'
     paginate_by = 6
     context_object_name = "music_list"
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            music_list = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(artist__icontains=query) |
+                Q(background__icontains=query)
+            )
+        else: 
+            music_list = self.model.objects.all()
+        return music_list
 
 class AddSong(LoginRequiredMixin, CreateView):
     # Add a song 

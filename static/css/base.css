@@ -36,6 +36,7 @@ h4,
 h5,
 h6 {
     font-family: var(--title);
+    color: var(--black);
 }
 
 main {
@@ -102,6 +103,10 @@ a.nav-link {
 
 .card h5 a:hover {
     color: #072f6b;
+}
+
+.img-size {
+    width: 100%;
 }
 
 #pButton {

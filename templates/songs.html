@@ -14,14 +14,14 @@
         <div class="card m-3" style="width: 18rem;">
             <img src="{{music.image.url}}" class="card-img-top" alt="#">
             <div class="card-body">
-                
-            <h2 class="card-title">{{music.artist}}</h2>
-            <h3 class="card-title">{{music.title}}</h3>
+    </a>            
+            <h4 class="card-title font-weight-bold">{{music.artist}}</h4>
+            <h5 class="card-title"><em>{{music.title}}</em></h5>
               
             <!-- <p class="card-text">{{music.background|truncatechars:100}}</p> -->
             </div>
         </div>
-    </a>
+    
     {% endfor %}
 </div>
 {% endblock %}

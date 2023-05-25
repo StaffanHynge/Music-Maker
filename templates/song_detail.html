@@ -15,7 +15,7 @@
                 <h1 class="text-center">{{ song.title }}</h1>
                 <p class="text-center">Posted by {{song.user}} on {{ song.created_on }}</p>
                 <hr>
-                <p>{{song.background}}</p>
+                <p>{{ song.background|safe }}</p>
                 <a href="{{ song.link }}" target=_blank class="p-3"><strong>Listen To {{ song.title }}: </strong></a>
 
                 {% if request.user == song.user %} 
