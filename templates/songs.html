@@ -7,7 +7,7 @@
     Latest Songs
 </h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
-    {% for music in music_list %} 
+{% for music in music_list %} 
   <a href="{% url 'song_detail' music.pk %}" class="songs" aria-label="Click to view {{music.title}}">
 
 
