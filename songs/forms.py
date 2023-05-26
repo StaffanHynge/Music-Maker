@@ -5,7 +5,7 @@ from .models import Music
 
 class MusicForm(forms.ModelForm):
 
-    class Meta: 
+    class Meta:
         model = Music
         fields = ['title', 'artist', 'link', 'background', 'image']
 
@@ -22,3 +22,4 @@ class MusicForm(forms.ModelForm):
             "link": "Post a Link",
             "background": "Story of the song"
         }
+        

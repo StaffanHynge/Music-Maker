@@ -6,6 +6,7 @@ from django_resized import ResizedImageField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Music(models.Model):
     user = models.ForeignKey(
         User, related_name='song_owner', on_delete=models.CASCADE)
@@ -25,6 +26,7 @@ class Music(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Music, on_delete=models.CASCADE,

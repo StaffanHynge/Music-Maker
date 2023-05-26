@@ -1,6 +1,14 @@
 from . import views
 from django.urls import path
-from .views import AddSong, MusicList, HomeView, SongDetail, DeleteSong, EditSong
+from .views import (
+    AddSong,
+    MusicList,
+    HomeView,
+    SongDetail,
+    DeleteSong,
+    EditSong
+)
+
 
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
