@@ -105,8 +105,8 @@ a.nav-link {
     color: #072f6b;
 }
 
-.img-size {
-    width: 100%;
+.home-img {
+    filter: contrast(0.7);
 }
 
 #pButton {
