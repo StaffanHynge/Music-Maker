@@ -1,7 +1,7 @@
 # Music Maker
 #### Share your music with other artists and producers
 
-
+[Here is the livelink](https://music-maker.herokuapp.com/)
 
 Music Maker is an online platform designed specifically for musicians and producers to share their music with a global audience. With Music Maker, you can easily upload your songs and connect with other listeners and musicians from around the world. Whether you're looking to showcase your talents or simply share your passion for music, Music Maker offers a unique platform to help you reach out. 
 
@@ -100,13 +100,12 @@ Here are the user stories I created in the beginning of the project. I have used
 
 I used these libraries, frameworks and databases for this project
 
-- Cloudinary - to store static files
-- Dbdiagram  - used for the database schema diagram
-- GitHub - was used as a remote repository to store project code
-- Django AllAuth  - was used for user authentication
-- Pillow  - was used for image processing and validation
-- Psycopg2  - was used as a PostgreSQL database adapter for Python  
-- PostgreSQL - deployed project uses a PostgreSQL database
+- Cloudinary 
+- GitHub 
+- Django AllAuth 
+- Pillow  
+- Psycopg2  
+- PostgreSQL 
 
 
 ## Validation 
@@ -148,17 +147,33 @@ I used these libraries, frameworks and databases for this project
 > All the code passes with no errors or warnings.
 
 <details>
-  <summary>Log out</summary>
+  <summary>CSS</summary>
   <img src="images/css.png" alt="Image description">
 </details>
 
 > html Validator was used to check the code for html. 
-> All the code passes with no errors or warnings except for the the use of jinja templates.
+> All the code passes with no errors or warnings  except for the the use of jinja templates..
 
 <details>
-  <summary>Log out</summary>
+  <summary>HTML</summary>
   <img src="images/html.png" alt="Image description">
 </details>
+
+> Lighthouse to check quality and performance of the page. 
+
+<details>
+  <summary>Lighthouse</summary>
+  <img src="images/lighthouse.png" alt="Image description">
+</details>
+
+
+## Features to make in The Future
+
+- Add a commentsection
+- Like/unlike buttons
+- Upload an audiofile instead of a link 
+- Be able to filter a song on which type it is
+
 
 ## Credits
 
